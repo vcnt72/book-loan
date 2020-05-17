@@ -1,0 +1,19 @@
+.header-text-login {
+    color: #ff7193;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    color: #ffffff;
+}
+
+.btn-pink {
+    background-color: #ff7193;
+    color: white;
+}
