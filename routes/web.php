@@ -20,3 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'UserController@profile')->name('profile');
+
+Route::get('/change-password', 'UserController@viewChangePassword')->name('viewChangePassword');
+
+Route::post('/change-password/{id}', 'UserController@changePassword')->name('changePassword');
+
+Route::get('/update-profile', 'UserController@viewUpdateProfile')->name('viewUpdateProfile');
+
+Route::post('/update-profile/{id}', 'UserController@updateProfile')->name('updateProfile');

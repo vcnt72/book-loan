@@ -50,8 +50,32 @@
       placeholder="Confirm Password..."
     />
   </div>
-  <button type="submit" class="btn btn-pink">  
+  <div class="form-group">
+    <label>Roles : </label>
+    <select class="form-control" name="role">
+      <option value="member">Member</option>
+      <option value="publisher">Publisher</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-pink mb-5">  
     {{ __('Register') }}
   </button>
+
+  @if ($errors->any())
+  <div class="alert alert-danger">
+      <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+      </ul>
+  </div>
+  @endif
+
+  @if (Session::has('success'))
+  <div class="alert alert-success">
+   {{Session::get('success')}}
+   </div>
+  @endif
+
 </form>
 @endsection

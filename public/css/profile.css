@@ -1,0 +1,21 @@
+.container h1 {
+  color: white;
+  text-align: center;
+}
+
+.profile-body {
+  color: #ff7193;
+  font-size: 30px;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.profile-label {
+  text-align: right;
+}
+
+.update-profile-btn {
+  margin-left: 115px;
+  margin-top: 50px;
+}
