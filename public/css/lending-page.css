@@ -1,0 +1,130 @@
+body{
+  margin: 0;
+  background-color: #371E48;
+}
+
+#header{
+  position: static;
+  width: 100%;
+    
+}
+
+#header ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0px 5px;
+  overflow: hidden;
+  color: white;
+}
+
+#header li{
+  float: right;
+  padding: 15px 15px 0px 15px;
+  text-align: center;
+  font-size: 90%
+
+}
+
+#header span{
+  float: left;
+}
+
+#content{
+  position: static;
+  width: 100%;
+  height: auto;
+  margin: 75px 0px 0px 0px;
+}
+
+.title{
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  
+}
+
+form > div {
+  position: relative;
+  overflow: hidden;
+  padding: 0px 0px 15px 0px;
+  margin: 0px 0px 15px 0px;
+}
+
+input{
+  width: 300px;
+  border-radius: 5px;
+  border: 2px solid #FD6189;
+  background: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 12px 12px 12px 12px; 
+  outline: 0;
+  color: #FD6189;
+}
+
+input:valid{
+  background: #371E48;
+}
+input:focus{
+  border-color: #FD6189;
+}
+input :focus + label {
+  background: #FD6189;
+  color: #371E48 30%;
+  font-size: 70%;
+  padding: 1px 6px;
+  z-index: 2;
+  text-transform: uppercase;
+  
+}
+label {
+  position: absolute;
+  color: rgb(101, 90, 107);
+  padding: 12px 0px 0px 12px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+form.go-bottom input:focus + label{
+  top: 100%;
+  margin-top: -100px;
+}
+
+.button{
+  background-color: #FD6189;
+  border: none;
+  text-decoration: none;
+  padding: 16px 146px 16px 146px;
+  color: white;
+  border-radius: 10px;
+}
+
+#footer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin: 140px 0px 0px 0px;    
+}
+
+.footer-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-content{
+  color: white;
+  padding: 0px 5% 0px 0px;
+  /* padding: 15px 5% 0px 15px; */
+  text-align: center;
+  font-size: 70%;
+}

@@ -3,18 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Book;
+use App\Borrow;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +17,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $books = Book::all()->take(6);
+        if (Auth::user()) {
+            $books_loaned = Book::has('borrows')->get();
+            return view('home')->with(['books' => $books, 'books_loaned' => $books_loaned]);
+        }
+        return view('home')->with(['books' => $books]);
     }
 }

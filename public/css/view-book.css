@@ -1,0 +1,76 @@
+.hrnav1 {
+    border-top: 10px dashed dimgrey;
+}
+
+.table-head {
+    font-size: 24pt;
+    font-style: normal;
+    text-align: center;
+    color: #371e48;
+    background-color: #ff7193;
+}
+
+.table-bordered {
+    font-size: 18pt;
+    color: white;
+    width: 1200px;
+    height: 100%;
+    text-align: center;
+    border-color: #ff7193;
+}
+
+.testing {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.loan-more {
+    background-color: #ff7193;
+    color: white;
+}
+
+.cancel-loan {
+    background-color: #ff7193;
+    color: white;
+}
+
+.buttons {
+    padding-left: 450px;
+}
+
+.pages {
+    float: right;
+}
+
+.prev_page {
+    background-color: #ff7193;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+
+.next_page {
+    background-color: #ff7193;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+
+.prev_page:hover {
+    background-color: #ff7192b2;
+}
+.next_page:hover {
+    background-color: #ff7192b2;
+}
+
+.loan-more:hover {
+    background-color: #ff7192b2;
+}
+
+.cancel-loan:hover {
+    background-color: #ff7192b2;
+}

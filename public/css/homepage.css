@@ -1,0 +1,43 @@
+.title
+{
+    color: white;
+}
+
+.books_row
+{
+    color: #ff7193;
+}
+
+.col-sm
+{
+    color: white;
+}
+
+.recommended_books
+{
+    padding-top: 50px;
+}
+
+.user_books
+{
+    padding-top: 50px;
+    color: white;
+    background-color: rgba(120, 4, 170, 0.281);
+    padding-bottom: 100px;
+    padding-left: 30px;
+}
+
+.user_books
+{
+    border-radius: 25px;
+}
+
+.collection_row
+{
+    color: #ff7193;
+}
+
+.user_collection
+{
+    padding-left: 150px;
+}

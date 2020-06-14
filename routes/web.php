@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -30,3 +28,12 @@ Route::post('/change-password/{id}', 'UserController@changePassword')->name('cha
 Route::get('/update-profile', 'UserController@viewUpdateProfile')->name('viewUpdateProfile');
 
 Route::post('/update-profile/{id}', 'UserController@updateProfile')->name('updateProfile');
+
+
+Route::resource('book', 'BookController');
+Route::resource('borrow', 'BorrowController');
+
+Route::get('book/destroy/{BookId}', 'BookController@destroy');
+Route::post('borrow/add/{id}', 'BorrowController@addToBorrow')->name('addToBorrow');
+
+Route::put('borrow/return/{id}', 'BorrowController@returnBook')->name('returnBook');

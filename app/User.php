@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Status');
     }
+
+    public function borrows()
+    {
+        return $this->hasMany('App\Borrow');
+    }
 }

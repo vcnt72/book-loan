@@ -60,3 +60,9 @@ nav {
     background-color: #ff7193;
     color: white;
 }
+
+.page-link {
+    border: none !important;
+    background-color: #ff7193 !important;
+    color: white !important;
+}
