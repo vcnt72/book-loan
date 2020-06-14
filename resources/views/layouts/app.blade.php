@@ -33,12 +33,24 @@
         <li class="nav-item">
           <a href="{{ route('profile') }}" class="nav-link"> Profile </a>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('borrow.index') }}" class="nav-link"> Borrow </a>
-        </li>
+
         <li class="nav-item">
           <a href="{{ route('book.index') }}" class="nav-link"> Book </a>
         </li>
+
+
+        @if (Auth::user()->role->name === 'member')
+        <li class="nav-item">
+          <a href="{{ route('borrow.index') }}" class="nav-link"> Borrow </a>
+        </li>
+        @endif
+
+
+
+        @if (Auth::user()->role->name === 'publisher')
+
+        @endif
+
         <li class="nav-item">
           <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -59,6 +71,9 @@
 
   @yield('content')
 
+  @if (Session::has('success'))
+
+  @endif
   <footer class="footer">
     <div class="container-fluid">
       <div class="row">

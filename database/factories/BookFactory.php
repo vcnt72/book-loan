@@ -12,6 +12,7 @@ $factory->define(Book::class, function (Faker $faker) {
         'writer' => $faker->name,
         'publisher' => $faker->name,
         'isbn' => Str::random(10),
-        'content' => Str::random(30)
+        'content' => Str::random(30),
+        'user_id' => 1
     ];
 });

@@ -20,9 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            @php
-            $no = 1;
-            @endphp
+
             @foreach ($borrows as $borrow)
             <tr>
                 <th scope="row">{{$no}}</th>
@@ -40,9 +38,7 @@
                     </form>
                 </td>
             </tr>
-            @php
-            $no++;
-            @endphp
+
             @endforeach
 
         </tbody>
@@ -52,6 +48,7 @@
         {{ $borrows->links() }}
     </div>
     <br />
+
 </div>
 
 @endsection

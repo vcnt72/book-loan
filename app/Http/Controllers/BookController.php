@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
@@ -15,7 +17,15 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::simplePaginate(5);
+        $user = Auth::user();
+        if ($user->role->name === 'publisher') {
+            $books = Book::whereHas('user', function (Builder $query) {
+                $query->where('id', Auth::user()->id);
+            })->orderBy('title', 'asc')->simplePaginate(5);
+        } else {
+            $books = Book::simplePaginate(5);
+        }
+
         return view('book.index')->with(['books' => $books]);
     }
 
@@ -26,7 +36,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('book.BookForm');
+        return view('book.create');
     }
 
     /**
@@ -37,20 +47,24 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request->all());
+
         $this->validate($request, [
             'title'    =>  'required',
             'isbn'     =>  'required',
-            'publisher'    =>  'required',
             'writer'    =>  'required',
             'content'    =>  'required'
         ]);
         $book = new Book([
             'title'    =>  $request->get('title'),
             'isbn'     =>  $request->get('isbn'),
-            'publisher'    =>  $request->get('publisher'),
+            'publisher'    =>  Auth::user()->name,
             'writer'    =>  $request->get('writer'),
-            'content'    =>  $request->get('content')
+            'content'    =>  $request->get('content'),
         ]);
+
+        $book->user()->associate(Auth::user());
         $book->save();
         return redirect()->route('book.create')->with('success', 'Book Added');
     }
@@ -75,7 +89,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::find($id);
-        return view('book.UpdateForm', compact('book', 'id'));
+        return view('book.edit')->with(['book' => $book]);
     }
 
     /**
@@ -110,9 +124,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($BookId)
+    public function destroy($id)
     {
-        $book = Book::find($BookId);
+        $book = Book::find($id);
         $book->delete();
         return redirect()->route('book.index')->with('success', 'Book Deleted');
     }

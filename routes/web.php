@@ -37,3 +37,5 @@ Route::get('book/destroy/{BookId}', 'BookController@destroy');
 Route::post('borrow/add/{id}', 'BorrowController@addToBorrow')->name('addToBorrow');
 
 Route::put('borrow/return/{id}', 'BorrowController@returnBook')->name('returnBook');
+
+Route::get('book/update/{id}', 'BookController@edit')->name('editBook');

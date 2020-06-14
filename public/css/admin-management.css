@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  width: 100%;
+  background-color: #371e48;
+}
+
+#navbar {
+  height: 40px;
+}
+
+#navbar ul {
+  list-style-type: none;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar li {
+  display: inline-block;
+  color: white;
+  padding: 14px 16px;
+  font-size: 90%;
+}
+
+#content {
+  height: auto;
+}
+
+.book-collection {
+  width: 100%;
+  height: auto;
+}
+
+.head-title {
+  color: white;
+  padding: 60px 16px 0px;
+}
+
+.content-flex-container {
+  display: flex;
+  height: auto;
+  margin: 0;
+  padding: 0px 16px;
+}
+
+.content-flex-box {
+  width: auto;
+  height: auto;
+}
+
+.content-flex-box li {
+  margin-bottom: 5px;
+}
+
+.book-list {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.book-title {
+  width: 500px;
+}
+
+.content-flex-box ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox {
+  width: 100%;
+  height: auto;
+  background-color: #f73565;
+}
+
+.option-list {
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+}
+
+.option-button {
+  background-color: #fd5e8a;
+  color: white;
+  font-size: 1em;
+  margin: 0px 5px;
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+
+.option-button:hover {
+  cursor: pointer;
+  background-color: #f73565;
+}
+
+#footer {
+  margin-top: 100px;
+  height: 55px;
+}
+
+.footer-flex-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.footer-content {
+  padding: 0px 35px 20px;
+  color: white;
+  font-size: 90%;
+}
+
+.copyright {
+  text-align: center;
+  width: 100%;
+  font-size: 70%;
+  font-weight: lighter;
+  color: white;
+}
