@@ -33,6 +33,7 @@
       <select class="form-control" name="role">
         <option value="member">Member</option>
         <option value="publisher">Publisher</option>
+        <option value="admin">Admin</option>
       </select>
     </div>
     <button type="submit" class="btn btn-pink mb-5">

@@ -69,6 +69,13 @@ class BookController extends Controller
         return redirect()->route('book.create')->with('success', 'Book Added');
     }
 
+
+    public function adminView()
+    {
+        $books = Book::all()->take(5);
+        return view('book.admin')->with(['books' => $books]);
+    }
+
     /**
      * Display the specified resource.
      *

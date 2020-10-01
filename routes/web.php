@@ -28,6 +28,7 @@ Route::post('/change-password/{id}', 'UserController@changePassword')->name('cha
 Route::get('/update-profile', 'UserController@viewUpdateProfile')->name('viewUpdateProfile');
 
 Route::post('/update-profile/{id}', 'UserController@updateProfile')->name('updateProfile');
+Route::get('book/admin', 'BookController@adminView')->name('adminView');
 
 
 Route::resource('book', 'BookController');

@@ -34,21 +34,24 @@
           <a href="{{ route('profile') }}" class="nav-link"> Profile </a>
         </li>
 
-        <li class="nav-item">
-          <a href="{{ route('book.index') }}" class="nav-link"> Book </a>
-        </li>
 
 
-        @if (Auth::user()->role->name === 'member')
+        @if (Auth::user()->role->name === 'member' || Auth::user()->role->name === 'publisher')
         <li class="nav-item">
           <a href="{{ route('borrow.index') }}" class="nav-link"> Borrow </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{ route('book.index') }}" class="nav-link"> Book </a>
         </li>
         @endif
 
 
 
-        @if (Auth::user()->role->name === 'publisher')
-
+        @if (Auth::user()->role->name === 'admin')
+        <li class="nav-item">
+          <a href="{{ route('adminView') }}" class="nav-link"> Book management </a>
+        </li>
         @endif
 
         <li class="nav-item">
@@ -71,9 +74,7 @@
 
   @yield('content')
 
-  @if (Session::has('success'))
 
-  @endif
   <footer class="footer">
     <div class="container-fluid">
       <div class="row">

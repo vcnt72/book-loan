@@ -16,5 +16,6 @@ class RolesSeeder extends Seeder
             'name' => 'member'
         ]);
         Role::create(['name' => 'publisher']);
+        Role::create(['name' => 'admin']);
     }
 }
